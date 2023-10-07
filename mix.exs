@@ -29,12 +29,12 @@ defmodule LiveViewNativeFlutterUi.MixProject do
     ]
   end
 
-  @source_url "https://github.com/liveview-native/liveview-client-swiftui"
+  @source_url "https://github.com/alex-min/live_view_native_flutter_ui"
 
   # Hex package configuration
   defp package do
     %{
-      maintainers: ["May Matyi"],
+      maintainers: ["alex-min"],
       licenses: ["MIT"],
       links: %{
         "GitHub" => @source_url
