@@ -1,7 +1,7 @@
-defmodule LiveViewNativeFlutterUi.Modifiers.MaterialIcon do
+defmodule LiveViewNativeFlutter.Modifiers.MaterialIcon do
   use LiveViewNativePlatform.Modifier
 
-  alias LiveViewNativeFlutterUi.Types.MaterialIcon
+  alias LiveViewNativeFlutter.Types.MaterialIcon
 
   modifier_schema "material_icon" do
     field(:icon, MaterialIcon)

@@ -1,4 +1,4 @@
-defmodule LiveViewNativeFlutterUi.Modifiers do
+defmodule LiveViewNativeFlutter.Modifiers do
   use LiveViewNativePlatform.Modifiers
 
   defimpl Jason.Encoder do

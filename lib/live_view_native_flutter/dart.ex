@@ -1,19 +1,19 @@
-defmodule LiveViewNativeFlutterUi.Dart do
+defmodule LiveViewNativeFlutter.Dart do
   @moduledoc ~S'''
   Provides commands for executing Flutter operations on the client.
 
   Inspired & partially copied from Phoenix.LiveView.JS
   '''
 
-  alias LiveViewNativeFlutterUi.Dart
+  alias LiveViewNativeFlutter.Dart
   @default_transition_time 200
 
   defstruct ops: []
 
   @opaque t :: %__MODULE__{}
 
-  defimpl Phoenix.HTML.Safe, for: LiveViewNativeFlutterUi.Dart do
-    def to_iodata(%LiveViewNativeFlutterUi.Dart{} = js) do
+  defimpl Phoenix.HTML.Safe, for: LiveViewNativeFlutter.Dart do
+    def to_iodata(%LiveViewNativeFlutter.Dart{} = js) do
       Phoenix.HTML.Engine.html_escape(Phoenix.json_library().encode!(js.ops))
     end
   end
@@ -82,7 +82,7 @@ defmodule LiveViewNativeFlutterUi.Dart do
 
   def switch_theme(%Dart{} = exec, theme, mode)
       when is_binary(theme) and is_binary(mode) do
-    push(exec, "switchTheme", value: %{theme: theme, mode: mode})
+    put_op(exec, "switchTheme", %{theme: theme, mode: mode})
   end
 
   defp class_names(nil), do: []
@@ -132,12 +132,10 @@ defmodule LiveViewNativeFlutterUi.Dart do
     transition = transition_class_names(opts[:transition])
     time = opts[:time] || @default_transition_time
 
-    push(dart, "hide",
-      value: %{
-        to: opts[:to],
-        transition: transition,
-        time: time
-      }
+    put_op(dart, "hide",
+      to: opts[:to],
+      transition: transition,
+      time: time
     )
   end
 
@@ -151,12 +149,10 @@ defmodule LiveViewNativeFlutterUi.Dart do
     transition = transition_class_names(opts[:transition])
     time = opts[:time] || @default_transition_time
 
-    push(dart, "show",
-      value: %{
-        to: opts[:to],
-        transition: transition,
-        time: time
-      }
+    put_op(dart, "show",
+      to: opts[:to],
+      transition: transition,
+      time: time
     )
   end
 
@@ -169,11 +165,11 @@ defmodule LiveViewNativeFlutterUi.Dart do
       Dart.save_current_theme()
   """
   def save_current_theme(%Dart{} = exec) do
-    push(exec, "saveCurrentTheme")
+    put_op(exec, "saveCurrentTheme", %{})
   end
 
   def save_current_theme() do
-    push(%Dart{}, "saveCurrentTheme")
+    put_op(%Dart{}, "saveCurrentTheme", %{})
   end
 
   defp put_op(%Dart{ops: ops} = js, kind, args) do

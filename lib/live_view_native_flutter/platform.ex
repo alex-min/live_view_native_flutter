@@ -1,4 +1,4 @@
-defmodule LiveViewNativeFlutterUi.Platform do
+defmodule LiveViewNativeFlutter.Platform do
   defstruct [
     :app_name,
     :os_name,
@@ -12,10 +12,10 @@ defmodule LiveViewNativeFlutterUi.Platform do
     require Logger
 
     def compile(struct) do
-      LiveViewNativePlatform.Env.define(:flutterui,
+      LiveViewNativePlatform.Env.define(:flutter,
         custom_modifiers: struct.custom_modifiers,
-        render_macro: :sigil_FLUTTERUI,
-        otp_app: :live_view_native_flutter_ui
+        render_macro: :sigil_FLUTTER,
+        otp_app: :live_view_native_flutter
       )
     end
   end

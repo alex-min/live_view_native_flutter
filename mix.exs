@@ -1,12 +1,12 @@
-defmodule LiveViewNativeFlutterUi.MixProject do
+defmodule LiveViewNativeFlutter.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :live_view_native_flutter_ui,
+      app: :live_view_native_flutter,
       version: "0.1.1",
       elixir: "~> 1.15",
-      description: "LiveView Native platform for FlutterUI",
+      description: "LiveView Native platform for Flutter",
       package: package(),
       start_permanent: Mix.env() == :prod,
       deps: deps()

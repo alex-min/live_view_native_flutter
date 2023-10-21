@@ -1,4 +1,4 @@
-defmodule LiveViewNativeFlutterUi.Types.MaterialIcon do
+defmodule LiveViewNativeFlutter.Types.MaterialIcon do
   use LiveViewNativePlatform.Modifier.Type
 
   def type, do: :integer
