@@ -31,7 +31,7 @@ defmodule LiveViewNativeFlutter.MixProject do
     ]
   end
 
-  @source_url "https://github.com/alex-min/live_view_native_flutter_ui"
+  @source_url "https://github.com/alex-min/live_view_native_flutter"
 
   # Hex package configuration
   defp package do
