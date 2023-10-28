@@ -27,7 +27,7 @@ defmodule LiveViewNativeFlutter.MixProject do
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:live_view_native_platform, "~> 0.1"},
       {:phoenix, "~> 1.7.7"},
-      {:phoenix_live_view, "~> 0.19.0"}
+      {:phoenix_live_view, "~> 0.20.0"}
     ]
   end
 

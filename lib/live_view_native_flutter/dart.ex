@@ -57,6 +57,17 @@ defmodule LiveViewNativeFlutter.Dart do
   end
 
   @doc """
+   Goes back to the previous screen
+  """
+  def go_back() do
+    go_back(%Dart{})
+  end
+
+  def go_back(%Dart{} = exec) do
+    put_op(exec, "goBack", %{})
+  end
+
+  @doc """
   Switches the app theme, the app theme is not saved locally, please see save_theme for saving the current theme.
 
     * `theme` (optional) - The theme to switch to (the default theme is named "default")
@@ -132,11 +143,11 @@ defmodule LiveViewNativeFlutter.Dart do
     transition = transition_class_names(opts[:transition])
     time = opts[:time] || @default_transition_time
 
-    put_op(dart, "hide",
+    put_op(dart, "hide", %{
       to: opts[:to],
       transition: transition,
       time: time
-    )
+    })
   end
 
   def show(opts \\ [])
@@ -149,11 +160,11 @@ defmodule LiveViewNativeFlutter.Dart do
     transition = transition_class_names(opts[:transition])
     time = opts[:time] || @default_transition_time
 
-    put_op(dart, "show",
+    put_op(dart, "show", %{
       to: opts[:to],
       transition: transition,
       time: time
-    )
+    })
   end
 
   @doc """
