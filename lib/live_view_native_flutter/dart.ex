@@ -183,6 +183,30 @@ defmodule LiveViewNativeFlutter.Dart do
     put_op(%Dart{}, "saveCurrentTheme", %{})
   end
 
+  @doc """
+  This opens the global bottom sheet at the top of the app.
+
+  ## Example:
+  <flutter>
+    <BottomSheet>
+     <Column>
+      <Text>this is a bottom sheet</Text>
+     </Column>
+    <viewBody>
+      <Container>
+        <ElevatedButton phx-click={Dart.show_bottom_sheet()}>hello</ElevatedButton>
+      </Container>
+    </viewBody>
+  </flutter>
+  """
+  def show_bottom_sheet(%Dart{} = exec) do
+    put_op(exec, "showBottomSheet", %{})
+  end
+
+  def show_bottom_sheet() do
+    put_op(%Dart{}, "showBottomSheet", %{})
+  end
+
   defp put_op(%Dart{ops: ops} = js, kind, args) do
     %Dart{js | ops: ops ++ [[kind, args]]}
   end
