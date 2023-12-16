@@ -4,7 +4,7 @@ defmodule LiveViewNativeFlutter.MixProject do
   def project do
     [
       app: :live_view_native_flutter,
-      version: "0.1.32",
+      version: "0.1.33",
       elixir: "~> 1.15",
       description: "LiveView Native platform for Flutter",
       package: package(),
@@ -25,7 +25,7 @@ defmodule LiveViewNativeFlutter.MixProject do
     [
       {:jason, "~> 1.2"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
-      {:live_view_native_platform, "~> 0.1"},
+      {:live_view_native_platform, "~> 0.2.0-beta.2"},
       {:phoenix, "~> 1.7.7"},
       {:phoenix_live_view, "~> 0.20.0"}
     ]
