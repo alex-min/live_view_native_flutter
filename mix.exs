@@ -16,7 +16,7 @@ defmodule LiveViewNativeFlutter.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger, :runtime_tools, :live_view_native_platform]
+      extra_applications: [:logger]
     ]
   end
 
@@ -25,7 +25,8 @@ defmodule LiveViewNativeFlutter.MixProject do
     [
       {:jason, "~> 1.2"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
-      {:live_view_native_platform, "~> 0.1"},
+      {:live_view_native,
+       github: "liveview-native/live_view_native", branch: "main", override: true},
       {:phoenix, "~> 1.7.7"},
       {:phoenix_live_view, "~> 0.20.0"}
     ]

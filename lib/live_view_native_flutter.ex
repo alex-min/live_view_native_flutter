@@ -1,8 +1,9 @@
 defmodule LiveViewNativeFlutter do
-  use LiveViewNativePlatform
+  @moduledoc false
 
-  def platforms,
-    do: [
-      LiveViewNativeFlutter.Platform
-    ]
+  use LiveViewNative,
+    format: :flutter,
+    component: LiveViewNative.Flutter.Component,
+    module_suffix: :Flutter,
+    template_engine: LiveViewNative.Engine
 end
