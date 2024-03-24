@@ -1,20 +1,26 @@
-defmodule LiveViewNativeFlutter.Dart do
+defmodule LiveViewNative.Flutter.Dart do
   @moduledoc ~S'''
   Provides commands for executing Flutter operations on the client.
 
   Inspired & partially copied from Phoenix.LiveView.JS
   '''
 
-  alias LiveViewNativeFlutter.Dart
+  alias LiveViewNative.Flutter.Dart
   @default_transition_time 200
 
   defstruct ops: []
 
   @opaque t :: %__MODULE__{}
 
-  defimpl Phoenix.HTML.Safe, for: LiveViewNativeFlutter.Dart do
-    def to_iodata(%LiveViewNativeFlutter.Dart{} = js) do
-      Phoenix.HTML.Engine.html_escape(Phoenix.json_library().encode!(js.ops))
+  defimpl Phoenix.HTML.Safe, for: LiveViewNative.Flutter.Dart do
+    def to_iodata(%LiveViewNative.Flutter.Dart{} = dart) do
+      Phoenix.HTML.Engine.html_escape(Phoenix.json_library().encode!(dart.ops))
+    end
+  end
+
+  defimpl LiveViewNative.Template.Safe, for: LiveViewNative.Flutter.Dart do
+    def to_iodata(%LiveViewNative.Flutter.Dart{} = dart) do
+      Phoenix.HTML.Engine.html_escape(Phoenix.json_library().encode!(dart.ops))
     end
   end
 

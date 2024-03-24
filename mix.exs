@@ -1,4 +1,4 @@
-defmodule LiveViewNativeFlutter.MixProject do
+defmodule LiveViewNative.Flutter.MixProject do
   use Mix.Project
 
   def project do

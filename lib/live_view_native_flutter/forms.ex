@@ -1,4 +1,4 @@
-defmodule LiveViewNativeFlutter.Forms do
+defmodule LiveViewNative.Flutter.Forms do
   @doc """
     Extract the Phoenix forms errors to be usable by flutter in your live view
 
