@@ -1,4 +1,4 @@
-defmodule LiveViewNativeFlutter do
+defmodule LiveViewNative.Flutter do
   @moduledoc false
 
   use LiveViewNative,
