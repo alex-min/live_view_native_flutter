@@ -25,10 +25,9 @@ defmodule LiveViewNative.Flutter.MixProject do
     [
       {:jason, "~> 1.2"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
-      {:live_view_native,
-       github: "liveview-native/live_view_native", branch: "main", override: true},
+      {:live_view_native, "~> 0.4.0-rc.0"},
       {:phoenix, "~> 1.7.7"},
-      {:phoenix_live_view, "~> 0.20.0"}
+      {:phoenix_live_view, "~> 1.0.1"}
     ]
   end
 
