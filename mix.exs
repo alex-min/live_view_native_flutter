@@ -23,11 +23,11 @@ defmodule LiveViewNative.Flutter.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:jason, "~> 1.2"},
+      {:jason, "~> 1.4"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
-      {:live_view_native, "~> 0.4.0-rc.0"},
-      {:phoenix, "~> 1.7.7"},
-      {:phoenix_live_view, "~> 1.0.1"}
+      {:live_view_native, "~> 0.4.0-rc.1"},
+      {:phoenix, "~> 1.7.23"},
+      {:phoenix_live_view, "~> 1.0"}
     ]
   end
 
