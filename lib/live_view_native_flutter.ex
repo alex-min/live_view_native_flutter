@@ -5,5 +5,5 @@ defmodule LiveViewNative.Flutter do
     format: :flutter,
     component: LiveViewNative.Flutter.Component,
     module_suffix: :Flutter,
-    template_engine: LiveViewNative.Engine
+    template_engine: LiveViewNative.Template.Engine
 end
